@@ -1,0 +1,41 @@
+
+article{padding:50px;}
+article > h1{
+    padding:10px 0;
+    margin-bottom:20px;
+    font-size:30px;line-height:40px;font-weight:bold;
+    text-align:left;
+    border-bottom:1px solid #ddd;
+}
+article > h2{
+    margin-top:20px;
+    font-size:18px;line-height:50px;font-weight:bold;
+    font-family: Consolas, Monaco, 'Andale Mono','微软雅黑';
+}
+article > p{padding:5px 0;font-size:16px;line-height:24px;}
+article > p > code ,
+article > table td > code{
+    margin: 0 3px;
+    padding: 2px 4px;
+    font-size:16px;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    color: #905;
+}
+article > table {width:100%;}
+article > table th,
+article > table td{
+    padding:5px 10px;
+    line-height:24px;font-size:16px;
+    text-align:left;
+    border:1px solid #ddd;
+}
+
+article > .demo{
+    display:block;
+    padding:20px;
+    border:1px solid #ddd;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"]{
+    font-size:16px;
+}
