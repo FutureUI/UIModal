@@ -33,7 +33,6 @@
         .alert .btn{margin:0 auto;}
     </style>
 
-    <link rel="stylesheet" type="text/css" href="../UI.modal.css">
     <script type="text/javascript" src="../UI.Modal.js"></script>
     
 </head>
@@ -47,8 +46,10 @@
     <h2>创建一个实例</h2>
 
     <pre><code class="language-javascript">var domeModal = new UI.Modal({
-    closeMethod:[Boolean],
-    callback:function(){}
+    zIndex : [ Number ],
+    background : [ String ],
+    closeMethod : [ Boolean ],
+    callback :  [ Function ]
 })</code></pre>
 
     <h2>参数说明</h2>
@@ -56,9 +57,21 @@
     <table>
         <tr>
             <th style="width:100px;">参数</th>
-            <th style="width:100px;">值/类型</th>
+            <th style="width:100px;">类型</th>
             <th style="width:100px;">默认</th>
             <th>说明</th>
+        </tr>
+        <tr>
+            <td><code>zIndex</code></td>
+            <td>[Number]</td>
+            <td>10000</td>
+            <td>可选。设置弹出层的z-index值。非必要情况下，不建议设置该参数，因为默认情况下后面显示的弹出将会显示在最前面。</td>
+        </tr>
+        <tr>
+            <td><code>background</code></td>
+            <td>[String]</td>
+            <td>'rgba(0,0,0,0)'</td>
+            <td>可选。设置新建层的背景。</td>
         </tr>
         <tr>
             <td><code>closeMethod</code></td>
@@ -104,6 +117,7 @@
 &lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn&quot; id=&quot;modalOpenBtn&quot;&gt;打开按钮&lt;/a&gt;</code></pre>
     <pre><code class="language-javascript">//创建一个实例
 var modal = new UI.Modal({
+    background:&#x27;rgba(0,0,0,.3)&#x27;,
     closeMethod:true,
     //回调事件，设置一个参数 o 用来接收show()方法的参数
     callback:function(o){ 
@@ -161,6 +175,7 @@ document.getElementById(&#x27;modalOpenBtn&#x27;).addEventListener(&#x27;click&#
 !function(){
     //创建一个实例
     var modal = new UI.Modal({
+        background:'rgba(0,0,0,.3)',
         closeMethod:true,
         //回调事件，设置一个参数 o 用来接收show()方法的参数
         callback:function(o){ 
