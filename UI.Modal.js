@@ -45,7 +45,6 @@ var UI = UI || {};
 			'background':this.opt.background
 		}
 		
-
 	}
 
 	Modal.prototype.show=function(obj){
