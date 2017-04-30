@@ -1,214 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title> UI.Modal </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/article.css">
-    <link rel="stylesheet" type="text/css" href="css/prism.css">
-
-    <style type="text/css">
-    	body{padding:50px;background:#fff;}
-    </style>
-
+    <meta charset="utf-8"/>
+    <title>
+        UIModal
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="src/css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="src/css/code.css" rel="stylesheet" type="text/css"/>
+    <link href="src/css/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="src/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/article.css" rel="stylesheet" type="text/css"/>
+    <link href="src/css/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
 
     <style>
-        .btn{display:block;width:100px;height:40px;line-height:40px;color:#fff;text-align:center;background:#08c;
-            transition:all ease-out .3s;
+        .demo{
+            margin-top:10px;
+            padding:20px;
+            border-radius:5px;
+            box-shadow:0 1px 2px rgba(0,0,0,.4),
+            0 -1px 1px rgba(0,0,0,.2);
         }
-        .btn:hover{background:#69c;}
-        .alert{
-            position:absolute;top:50%;left:50%;
-            width:300px;height:150px;
-            margin-left:-150px;margin-top:-75px;
-            background:#fed;
-        }
-        .alert p{
-            padding:10px 20px 0;
-            height:90px;overflow:hidden;
-            line-height:90px;font-size:18px;text-align:center;
-        }
-        .alert .btn{margin:0 auto;}
     </style>
-
-    <script type="text/javascript" src="js/UI.Modal.js"></script>
-    
 </head>
 <body>
-
-<article>
-    <h1>UI.Modal</h1>
-
-    <p>UI.Modal是一个弹出层创建工具，在这个弹出层上，你可以自定义你需要的内容（弹出框、文章详情、图片等等）。UI.Modal 构建的层(div)，不会和body同时出现滚动条，就好像一个新的页面。同时解决将body设置成<code>overflow:hidden</code>时，造成body内的元素因为滚动条消失所产生的抖动问题。以及良好的封装，和方便的调用方式，使你可以专注于弹出层的内容或者动画开发。</p>
-
-    <h2>创建一个实例</h2>
-
-    <pre><code class="language-javascript">var domeModal = new UI.Modal({
-    zIndex : [ Number ],
-    background : [ String ],
-    closeMethod : [ Boolean ],
-    callback :  [ Function ]
-})</code></pre>
-
-    <h2>参数说明</h2>
-
-    <table>
-        <tr>
-            <th style="width:100px;">参数</th>
-            <th style="width:100px;">类型</th>
-            <th style="width:100px;">默认</th>
-            <th>说明</th>
-        </tr>
-        <tr>
-            <td><code>zIndex</code></td>
-            <td>[Number]</td>
-            <td>10000</td>
-            <td>可选。设置弹出层的z-index值。非必要情况下，不建议设置该参数，因为默认情况下后面显示的弹出将会显示在最前面。</td>
-        </tr>
-        <tr>
-            <td><code>background</code></td>
-            <td>[String]</td>
-            <td>'rgba(0,0,0,0)'</td>
-            <td>可选。设置新建层的背景。</td>
-        </tr>
-        <tr>
-            <td><code>closeMethod</code></td>
-            <td>[Boolean]</td>
-            <td>false</td>
-            <td>可选。设置为<code>true</code>时，鼠标点击modal层时将执行hide()方法。</td>
-        </tr>
-        <tr>
-            <td><code>callback</code></td>
-            <td>[Function]</td>
-            <td>function(){}</td>
-            <td>可选。show()方法被执行后，执行callback()方法</td>
-        </tr>
-    </table>
-
-
-    <h2>方法说明</h2>
-
-    <table>
-        <tr>
-            <th style="width:100px;">参数</th>
-            <th>说明</th>
-        </tr>
-        <tr>
-            <td><code>show()</code></td>
-            <td>显示model。创建一个class属性为ui-modal的div，插入到页面中。可以设置一个参数传递给callback方法。</td>
-        </tr>
-        <tr>
-            <td><code>hide()</code></td>
-            <td>隐藏modal。将该modal的dom节点从页面中移除(remove)。</td>
-        </tr>
-    </table>
-
-
-    <h2>举例说明</h2>
-
-    <div class="demo">
-        <!-- 自定义一个按钮 用来触发modal的show方法 -->
-        <a href="javascript:void(0)" class="btn" id="modalOpenBtn">打开按钮</a>
+    <div class="side">
+        <nav>
+            <h2><a href="javascript:void(0)" id="home">UIModal</a></h2>
+            <h4>Document</h4>
+            <ul class="lists">
+                <li><a href="javascript:void(0)" id="API"><span class="iconfont">&#xe934;</span>API</a></li>
+                <li><a href="javascript:void(0)" id="example"><span class="iconfont">&#xe63c;</span>Example</a></li>
+                <!-- <li><a href="javascript:void(0)" id="page2"><span class="iconfont">&#xe625;</span>下载</a></li> -->
+            </ul>
+            <h4>Github</h4>
+            <ul class="lists">
+                <li><a target="_blank" href="https://github.com/FutureUI/UICheck"><span class="iconfont">&#xe69f;</span>github</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main">
+        <section data-for="home"><article data-file="home.md"></article></section>
+        <section data-for="API"><article data-file="API.md"></article></section>
+        <section data-for="example">
+            <article data-file="example.md"></article>
+            <div class="demo">
+                <input type="button" id="openBtn" value="打开一个提示框的按钮" />
+                <style>
+                .alert{
+                    position:absolute;top:50%;left:50%;
+                    width:300px;height:100px;
+                    margin-left:-150px;margin-top:-50px;
+                    background:#fff;
+                }
+                .alert p{padding:20px;text-align:center;}
+                .alert input{display:block;margin:0 auto;}
+                </style>
+            </div>
+        </section>
     </div>
 
-    <pre><code class="language-markup">&lt;!-- 自定义一个按钮 用来触发modal的show方法 --&gt;
-&lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn&quot; id=&quot;modalOpenBtn&quot;&gt;打开按钮&lt;/a&gt;</code></pre>
-    <pre><code class="language-javascript">//创建一个实例
-var modal = new UI.Modal({
-    background:&#x27;rgba(0,0,0,.3)&#x27;,
-    closeMethod:true,
-    //回调事件，设置一个参数 o 用来接收show()方法的参数
-    callback:function(o){ 
+    <script src="src/js/marked.js" type="text/javascript"></script>
+    <script src="src/js/highlight.pack.js" type="text/javascript"></script>
+    <script src="src/js/script.js" type="text/javascript"></script>
 
-        var _this=this;
 
-        //创建弹出框html
-        _this.el.innerHTML=&#x27;&lt;div class=&quot;alert&quot;&gt;&#x27;
-                        +&#x27;    &lt;p&gt;&#x27;+o.message+&#x27;&lt;/p&gt;&#x27;
-                        +&#x27;    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn&quot; id=&quot;modalCloseBtn&quot;&gt;关闭按钮&lt;/a&gt;&#x27;
-                        +&#x27;&lt;/div&gt;&#x27;;
-
-        //绑定事件，隐藏modal
-        document.getElementById(&#x27;modalCloseBtn&#x27;).addEventListener(&#x27;click&#x27;,function(){
-            //调用hide()方法
-            _this.hide();
+    <script src="UIModal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var alert = UIModal({
+            background:'rgba(0,0,0,.3)'
         });
-
-    }
-});
-
-//绑定事件，显示modal
-document.getElementById(&#x27;modalOpenBtn&#x27;).addEventListener(&#x27;click&#x27;,function(){
-    //调用show()方法，并传递一个参数
-    modal.show({&#x27;message&#x27;:&#x27;hello&#x27;}); 
-});</code></pre>
-    <pre class="language-css"><code>/*按钮和弹出框的样式*/
-.btn{
-    display:block;
-    width:100px;height:40px;
-    line-height:40px;color:#fff;text-align:center;
-    background:#08c;
-    transition:all ease-out .3s;
-}
-.btn:hover{background:#69c;}
-.alert{
-    position:absolute;top:50%;left:50%;
-    width:300px;height:150px;
-    margin-left:-150px;margin-top:-75px;
-    background:#fed;
-}
-.alert p{
-    padding:10px 20px 0;
-    height:90px;overflow:hidden;
-    line-height:90px;font-size:18px;text-align:center;
-}
-.alert .btn{margin:0 auto;}</code></pre>
-
-</article>
-
-    
-
-<script src="js/prism.js"></script>
-<script type="text/javascript">
-!function(){
-    //创建一个实例
-    var modal = new UI.Modal({
-        background:'rgba(0,0,0,.3)',
-        closeMethod:true,
-        //回调事件，设置一个参数 o 用来接收show()方法的参数
-        callback:function(o){ 
-
-            var _this=this;
-
-            //创建弹出框html
-            _this.el.innerHTML='<div class="alert">'
-                            +'    <p>'+o.message+'</p>'
-                            +'    <a href="javascript:void(0)" class="btn" id="modalCloseBtn">关闭按钮</a>'
-                            +'</div>';
-
-            //绑定事件，隐藏modal
-            document.getElementById('modalCloseBtn').addEventListener('click',function(){
-
-                //调用hide()方法
-                _this.hide();
-
-            });
-
+        alert.onshown = function(text){
+            this.el.innerHTML = '<div class="alert">'
+                                +'  <p>'+text+'</p>'
+                                +'  <input type="button" value="确定" />'
+                                +'</div>';
+            var _this = this;
+            var btn = this.el.querySelector('input[type="button"]');
+            btn.addEventListener('click',function(){
+                _this.close();
+            })
         }
-    });
-
-    //绑定事件，显示modal
-    document.getElementById('modalOpenBtn').addEventListener('click',function(){
-
-        //调用show()方法，并传递一个参数
-        modal.show({'message':'hello'}); 
-
-    });
-
-}()
-</script>
+        var openBtn = document.querySelector('#openBtn');
+        openBtn.addEventListener('click',function(){
+            alert.open('这是一个UIModal的例子');
+        })
+    </script>
 </body>
 </html>
-
