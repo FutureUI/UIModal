@@ -6,7 +6,7 @@
 ### 引入需要的文件
 
 ``` html
-<script src="UIModal.js" type="text/javascript"></script>
+<script src="UIModal.min.js" type="text/javascript"></script>
 ```
 
 ### 创建一个用于打开弹出层的按钮
