@@ -35,9 +35,9 @@
          * 打开modal 创建modal所需的dom，并依次执行 onshow 和 onshown
          * @param  {String | Object} arg 传递给 onshow 和 onshown
          */
-        open: function(arg) {
+        open: function() {
             if (this.el) return;
-            if (this.onshow(arg) === false) return;
+            if (this.onshow.apply(this,arguments) === false) return;
             this._setBodyScroll();
             this.el = document.createElement('div');
             this.el.className = "ui-modal";
@@ -53,7 +53,7 @@
                     e.target === this && _this.close();
                 })
             }
-            return this.onshown(arg);
+            return this.onshown.apply(this,arguments);
         },
         /**
          * 关闭modal，并将modal的dom元素
@@ -61,7 +61,7 @@
          */
         close: function(arg) {
             if (!this.el) return;
-            if (this.onhide(arg) === false) return;
+            if (this.onhide.apply(this,arg) === false) return;
             this.el.remove();
             this.el = null;
             //判断是否需要重置body scroll
@@ -73,7 +73,7 @@
                 }
             });
             if (!hasModalDisplay) this._resetBodyScroll();
-            return this.onhidden(arg);
+            return this.onhidden.apply(this,arg);
         },
         /**
          * 如果body存在滚动条，将其隐藏，并修正偏移量
